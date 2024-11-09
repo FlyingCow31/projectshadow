@@ -9,8 +9,11 @@ public class characterscript : MonoBehaviour
 
 
     public Rigidbody2D Charigidbody2D;
+    public LogicManager Logic;
+
     void Start()
     {
+        Logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicManager>();
     }
 
     // Update is called once per frame
