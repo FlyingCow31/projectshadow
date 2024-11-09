@@ -17,7 +17,9 @@ My first "serious" game, a hack'n'slash ! I want it to be in black and white, th
 
 
 - [ ]  Add the first level 
-- [ ]  Add movements to the character
+- [x]  Add movements to the character
+- [ ]  Add good movements to the character (including sliding, etc.)
+- [ ]  Add a trail with the trail component and uncheck "emitting" to control it with the dash script
 - [ ]  Well... add a character 
 - [ ]  Add 3 types of monsters: 
 > Worms : just worms, they annoy the player by jumping on him and slowing him, have like 10HP and deal 1 damage. 
@@ -89,4 +91,3 @@ Please adhere to this project's `code of conduct`:
 - No sabotaging 
 - Keep in mind the essence of the game
 - Everything must be open source 
-

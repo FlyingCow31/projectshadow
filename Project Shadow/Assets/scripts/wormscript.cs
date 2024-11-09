@@ -10,6 +10,8 @@ public class wormscript : MonoBehaviour
     public float speed;
     public float timer;
 
+    public float WormHealth;
+
 
 
     // Start is called before the first frame update
@@ -22,6 +24,11 @@ public class wormscript : MonoBehaviour
     void Update()
     {
         Movement();
+
+        if (WormHealth <= 0)
+        {
+            WormDeath();
+        }
     }
 
     public void Movement()
@@ -29,7 +36,7 @@ public class wormscript : MonoBehaviour
         if (timer < 1f)
         {
             transform.position = UnityEngine.Vector3.MoveTowards(transform.position, character.transform.position, speed * Time.deltaTime);
-            timer += 4f;
+            timer += 3f;
             //Debug.Log("moving");
         }
         else 
@@ -45,5 +52,15 @@ public class wormscript : MonoBehaviour
             Logic.hit(1);
             Debug.Log("Hit");
         }
+    }
+
+    public void WormDeath()
+    {
+        Destroy(gameObject);
+    }
+
+    public void WormAttack()
+    {
+        
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Logic
   - Ennemy
+  - Ground
   layers:
   - Default
   - TransparentFX

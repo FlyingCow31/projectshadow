@@ -24,15 +24,18 @@ public class LogicManager : MonoBehaviour
         }
     }
 
+
     public void hit(int damage)
     {
         PlayerHealth = PlayerHealth - damage;
         Debug.Log(PlayerHealth);
     }
 
+
     public void GameOver()
     {
-            player.SetActive(false);
-            worm.SetActive(false);
+        player.SetActive(false);
+        worm.SetActive(false);
     }
+
 }
