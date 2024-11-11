@@ -19,7 +19,7 @@ My first "serious" game, a hack'n'slash ! I want it to be in black and white, th
 - [ ]  Add the first level 
 - [x]  Add movements to the character
 - [ ]  Add good movements to the character (including sliding, etc.)
-- [ ]  Add a trail with the trail component and uncheck "emitting" to control it with the dash script
+- [x]  Add a trail with the trail component and uncheck "emitting" to control it with the dash script
 - [ ]  Well... add a character 
 - [ ]  Add 3 types of monsters: 
 > Worms : just worms, they annoy the player by jumping on him and slowing him, have like 10HP and deal 1 damage. 
@@ -37,6 +37,7 @@ My first "serious" game, a hack'n'slash ! I want it to be in black and white, th
 > 2 armors 
 
 > 1 heal potion (droppable on mobs)
+- [x] Healing fonctionality 
 
 > 1 mana potion (droppable on mobs)
 

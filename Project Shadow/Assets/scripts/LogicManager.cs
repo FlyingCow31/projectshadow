@@ -8,6 +8,13 @@ public class LogicManager : MonoBehaviour
     public GameObject worm;
     public float PlayerHealth;
 
+    public float WormHealth;
+
+    public bool hasHealed = false;
+
+    public ParticleSystem healEffect;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +29,12 @@ public class LogicManager : MonoBehaviour
             Debug.Log("Game Over");
             GameOver();
         }
+
+        if (Input.GetKeyDown("e") && hasHealed == false)
+        {
+            StartCoroutine(Heal());
+        }
+        // TODO : Add heal potion condition. 
     }
 
 
@@ -37,5 +50,18 @@ public class LogicManager : MonoBehaviour
         player.SetActive(false);
         worm.SetActive(false);
     }
+
+    IEnumerator Heal()
+    {
+        hasHealed = true;
+
+        PlayerHealth = PlayerHealth + 1;
+        healEffect.Play();
+        yield return new WaitForSeconds(10);
+
+
+        hasHealed = false;
+    }
+
 
 }

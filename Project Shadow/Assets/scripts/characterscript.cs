@@ -10,6 +10,7 @@ public class characterscript : MonoBehaviour
 
     public Rigidbody2D Charigidbody2D;
     public LogicManager Logic;
+    private TrailRenderer Trail;
     private bool isOnFloor = false;
     public float movementSpeed;
     public float jumpHeight;
@@ -19,27 +20,31 @@ public class characterscript : MonoBehaviour
     public float dashDuration = 1f; //How long each dash lasts
     private bool isDashing = false;
     //seting up is dashing to false by default
-    private float dashCooldown = 1f; // Time between dashes
+    private float dashCooldown = 2f; // Time between dashes
     private float lastDashTime = -3f; //Time since last dash
 
     void Start()
     {
         Logic = GameObject.FindWithTag("Logic").GetComponent<LogicManager>();
         Charigidbody2D = GetComponent<Rigidbody2D>();
+        Trail = GetComponent<TrailRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         Charigidbody2D.velocity = new Vector2(horizontalInput * movementSpeed, Charigidbody2D.velocity.y);
     
+        // Jump if 
         if (Input.GetKeyDown("w") && isOnFloor)
         {
             Charigidbody2D.velocity = new Vector2(Charigidbody2D.velocity.x, jumpHeight);
             Debug.Log("Jump");
         }
 
+    // Dash if
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDashTime + dashCooldown)
         {
             StartCoroutine(Dash());
@@ -83,16 +88,20 @@ public class characterscript : MonoBehaviour
         }
     }
 
+
     IEnumerator Dash()
     { 
         isDashing = true;
-        lastDashTime = Time.time; //Records the dash time 
 
+        lastDashTime = Time.time; //Records the dash time 
         float dashDirection = transform.localScale.x; //get the side of the character, if it's -1 then he is looking left, if 1 right. 
         
+        Trail.emitting = true;
+
         Charigidbody2D.velocity = new Vector2(dashDirection * dashSpeed, Charigidbody2D.velocity.y);
         yield return new WaitForSeconds(dashDuration);
-
+        
+        Trail.emitting = false;
         isDashing = false;
     }
     void FixedUpdate()
@@ -115,6 +124,8 @@ public class characterscript : MonoBehaviour
         //the chara's scale is now the flipped scale
     }
     
+
+
 }
 
 

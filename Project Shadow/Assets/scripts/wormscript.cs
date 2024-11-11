@@ -10,7 +10,6 @@ public class wormscript : MonoBehaviour
     public float speed;
     public float timer;
 
-    public float WormHealth;
 
 
 
@@ -25,7 +24,7 @@ public class wormscript : MonoBehaviour
     {
         Movement();
 
-        if (WormHealth <= 0)
+        if (Logic.WormHealth <= 0)
         {
             WormDeath();
         }
@@ -61,6 +60,5 @@ public class wormscript : MonoBehaviour
 
     public void WormAttack()
     {
-        
     }
 }
