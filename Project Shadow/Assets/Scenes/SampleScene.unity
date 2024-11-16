@@ -5136,8 +5136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1991410878}
   Logic: {fileID: 962350873}
-  speed: 350
+  WormRB: {fileID: 597125952}
+  speed: 3
   timer: 1.5
+  wormhit: 0
 --- !u!50 &597125952
 Rigidbody2D:
   serializedVersion: 4
@@ -5308,6 +5310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1991410878}
   worm: {fileID: 597125950}
+  HealPotion: {fileID: 3943241287687977342, guid: fac956bf55056c8418e27e131299697e, type: 3}
   PlayerHealth: 10
   WormHealth: 10
   hasHealed: 0
@@ -5549,7 +5552,7 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 1
-  m_PreviewTimeScale: 0.5
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -5628,6 +5631,67 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1001 &2868930869531719961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 96040920938174192, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_Name
+      value: HealPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943241287687977342, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: logicManager
+      value: 
+      objectReference: {fileID: 962350873}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007778259
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085768874242956010, guid: fac956bf55056c8418e27e131299697e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fac956bf55056c8418e27e131299697e, type: 3}
 --- !u!1001 &4865861502540205451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5694,3 +5758,4 @@ SceneRoots:
   - {fileID: 597125955}
   - {fileID: 962350874}
   - {fileID: 4865861502540205451}
+  - {fileID: 2868930869531719961}

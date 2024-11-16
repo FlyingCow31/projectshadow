@@ -103,7 +103,7 @@ public class characterscript : MonoBehaviour
         
         Trail.emitting = false;
         isDashing = false;
-    }
+    } 
     void FixedUpdate()
     {
         if (isDashing)

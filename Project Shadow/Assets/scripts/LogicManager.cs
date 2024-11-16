@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class LogicManager : MonoBehaviour
 {
+    
+    [Header("Game Objects")]
     public GameObject player;
     public GameObject worm;
+    public healpotion HealPotion;
+
+    [Header("GO Health")]
     public float PlayerHealth;
 
     public float WormHealth;
 
+    [Header("Heal System")]
     public bool hasHealed = false;
-
     public ParticleSystem healEffect;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        HealPotion = HealPotion.GetComponent<healpotion>();
     }
 
     // Update is called once per frame
@@ -30,11 +35,10 @@ public class LogicManager : MonoBehaviour
             GameOver();
         }
 
-        if (Input.GetKeyDown("e") && hasHealed == false)
+        if (Input.GetKeyDown("e") && hasHealed == false && HealPotion.HealInInv >= 1)
         {
             StartCoroutine(Heal());
         }
-        // TODO : Add heal potion condition. 
     }
 
 
@@ -57,6 +61,7 @@ public class LogicManager : MonoBehaviour
 
         PlayerHealth = PlayerHealth + 1;
         healEffect.Play();
+        HealPotion.HealInInv -= 1;
         yield return new WaitForSeconds(10);
 
 
