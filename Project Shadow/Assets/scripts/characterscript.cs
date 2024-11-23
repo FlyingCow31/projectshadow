@@ -23,6 +23,7 @@ public class characterscript : MonoBehaviour
     private float dashCooldown = 2f; // Time between dashes
     private float lastDashTime = -3f; //Time since last dash
 
+
     void Start()
     {
         Logic = GameObject.FindWithTag("Logic").GetComponent<LogicManager>();

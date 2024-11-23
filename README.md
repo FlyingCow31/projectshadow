@@ -89,8 +89,14 @@ My first "serious" game, a hack'n'slash ! I want it to be in black and white, th
 - [ ]  Score
 - [ ] A GUI with Health, Mana and inventory
 - [ ] A Debug mode which enables all sorts of debug text + a debug file to write what each line means 
+- [ ] A way for the character to hit ennemies 
 
 
+
+
+
+## Fix TODO
+- [ ] Fix Jump not jumping in the middle of the map.
 
 ## 👍 Feedback
 

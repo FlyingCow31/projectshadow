@@ -13,7 +13,7 @@ public class LogicManager : MonoBehaviour
     [Header("GO Health")]
     public float PlayerHealth;
 
-    public float WormHealth;
+    public float WormHealth; 
 
     [Header("Heal System")]
     public bool hasHealed = false;
